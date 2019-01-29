@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/Project4-GolfAngular",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$dark-green: (
+  50: #4c8c4a,
+  100: #4c8c4a,
+  200: #4c8c4a,
+  300: #1b5e20,
+  400: #1b5e20,
+  500: #1b5e20,
+  600: #1b5e20,
+  700: #1b5e20,
+  800: #1b5e20,
+  900: #1b5e20,
+  A100: #1b5e20,
+  A200: #1b5e20,
+  A400: #1b5e20,
+  A700: #1b5e20,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$light-gray: (
+  50: #c1d5e0,
+  100: #c1d5e0,
+  200: #c1d5e0,
+  300: #546e7a,
+  400: #546e7a,
+  500: #546e7a,
+  600: #546e7a,
+  700: #546e7a,
+  800: #546e7a,
+  900: #546e7a,
+  A100: #546e7a,
+  A200: #546e7a,
+  A400: #546e7a,
+  A700: #546e7a,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$Project4-GolfAngular-primary: mat-palette($dark-green);
+$Project4-GolfAngular-accent: mat-palette($mat-grey);
+
+$Project4-GolfAngular-warn: mat-palette($mat-red);
+
+$Project4-GolfAngular-theme: mat-light-theme($Project4-GolfAngular-primary, $Project4-GolfAngular-accent, $Project4-GolfAngular-warn);
+
+@include angular-material-theme($Project4-GolfAngular-theme);

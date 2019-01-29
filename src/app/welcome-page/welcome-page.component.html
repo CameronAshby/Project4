@@ -1,0 +1,70 @@
+<div class="welcomePageContainer">
+  <div class="carouselContainer">
+    <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img class="d-block w-100 carouselImage" src="../../assets/images/golf-course.jpg" alt="First slide">
+          <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption welcomeTitle">
+          <h3 class="h3-responsive">Welcome To Angular Golfing</h3>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img class="d-block w-100 carouselImage" src="../../assets/images/fox-hollow.jpg" alt="First slide">
+          <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Fox Hollow</h3>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img class="d-block w-100 carouselImage" src="../../assets/images/thanksgiving-point.jpg" alt="Second slide">
+          <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Thanksgiving Point</h3>
+        </div>
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <div class="view w-100">
+          <img class="d-block w-100 carouselImage" src="../../assets/images/spanish-oaks.jpg" alt="Third slide">
+          <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Spanish Oaks</h3>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+
+  <div class="optionMenuContainer">
+
+    <div class="golfIconContainer">
+      <img class="golfIcon" src="../../assets/images/golf-man.png">
+      <img class="golfIcon" src="../../assets/images/golf-man.png">
+      <img class="golfIcon" src="../../assets/images/golf-man.png">
+    </div>
+
+    <div class="optionFooter">
+      <div class="footerOptionContainer">
+        <div class="footerOption">
+          <button mat-raised-button color="primary" [routerLink]="['/game-setup']">New Game</button>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="footerOption socialMediaContainer">
+          <a href="https://facebook.com"><img class="footerIcon" src="../../assets/images/facebook.png"></a>
+          <a href="https://twitter.com"><img class="footerIcon" src="../../assets/images/twitter.png"></a>
+          <a href="https://pinterest.com"><img class="footerIcon" src="../../assets/images/pinterest.png"></a>
+          <a href="https://instagram.com"><img class="footerIcon" src="../../assets/images/instagram.png"></a>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="footerOption">
+          <button mat-raised-button color="primary" [routerLink]="['/contact-us']" >Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

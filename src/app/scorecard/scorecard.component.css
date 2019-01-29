@@ -1,0 +1,78 @@
+.scoreCardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.scorecardCard {
+  margin-top: 10px;
+  width: 80%;
+}
+
+.scorecardCardTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.courseTitle {
+  text-align: center;
+}
+
+.editGameContainer {
+  cursor: pointer;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleButton {
+  margin: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.navigationButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.golfBall {
+  width: 50px;
+  height: 50px;
+}
+
+.arrow {
+  cursor: pointer;
+  align-self: center;
+  font-size: 30px;
+}
+
+.endGameButton {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 90%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+  .scorecardCardTitle {
+    display: flex;
+    flex-direction: column;
+  }
+}

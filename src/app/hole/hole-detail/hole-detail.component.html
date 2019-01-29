@@ -1,0 +1,19 @@
+<mat-card class="holeDetailContainer">
+  <mat-card-title class="mainTitle">Hole {{courseInfo.holeIndex+1}}</mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let i = index; let player of courseInfo.playerArray | playerFilter;">
+      <mat-card-title>
+        {{player.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        Score
+      </mat-card-subtitle>
+      <input
+        matInput
+        type="number"
+        placeholder="Enter Score ..."
+        [(ngModel)]="courseInfo.playerArray[i].scoreArray[courseInfo.holeIndex]"
+        (change)="updateScores(i, courseInfo.holeIndex); updateFireBase()">
+    </div>
+  </mat-card-content>
+</mat-card>

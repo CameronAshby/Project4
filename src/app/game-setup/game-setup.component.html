@@ -1,0 +1,46 @@
+<div class="gameSetupPageContainer">
+  <mat-card class="setupCard">
+    <mat-card-title class="mainTitle">Game Setup</mat-card-title>
+    <mat-card-subtitle>Select Course</mat-card-subtitle>
+
+    <div class="coursesCardContainer">
+          <mat-select placeholder="Select Course ..." [(ngModel)]="courseIndex" (selectionChange)="setId()">
+            <mat-option *ngFor="let course of courseObject; let i = index" value="{{i}}">{{course.name}}</mat-option>
+          </mat-select>
+    </div>
+
+    <div *ngIf="haveCourseId">
+
+      <mat-card-subtitle >Select Tee</mat-card-subtitle>
+      <mat-select placeholder="Select Tee ..." (selectionChange)="getTee()" [(ngModel)]="teeSelection">
+        <mat-option *ngFor="let tee of teesObject; let i = index" value="{{i}}">{{tee.teeType}}</mat-option>
+      </mat-select>
+
+      <div *ngIf="haveTee">
+        <mat-card-subtitle >Select Amount Of Players</mat-card-subtitle>
+        <mat-select placeholder="Select Player Count ..." [(ngModel)]="playerCount" (selectionChange)="getPlayerCount(playerCount)">
+          <mat-option value=1>1</mat-option>
+          <mat-option value=2>2</mat-option>
+          <mat-option value=3>3</mat-option>
+          <mat-option value=4>4</mat-option>
+        </mat-select>
+
+        <div *ngIf="havePlayerCount">
+          <div class="playerInput" *ngFor="let players of playerArray; let i = index">
+            <mat-form-field>
+              <input matInput placeholder="Enter Player Name ..." (change)="getNames(i+1)" [(ngModel)]="players.name" required>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      *ngIf="havePlayerCount && haveTee && haveCourseId && haveNames"
+      class="startButton"
+      mat-raised-button
+      color="primary"
+      (click)="buildCourse(); displayScoreCard()"
+    >Start Game</button>
+  </mat-card>
+</div>

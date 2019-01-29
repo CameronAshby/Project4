@@ -1,0 +1,67 @@
+.endGameContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.courseTitle {
+  color: #1b5e20;
+}
+
+.endGameCard {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playerName {
+  color: #1b5e20;
+}
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.messageCard {
+  margin: 10px;
+  width: 45%;
+}
+
+.playerCardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 80%;
+}
+
+@media only screen and (max-width: 700px) {
+  .messageContainer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .messageCard {
+    width: 100%;
+  }
+}

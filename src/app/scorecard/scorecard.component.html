@@ -1,0 +1,83 @@
+<div class="scoreCardContainer">
+  <mat-card class="scorecardCard">
+    <mat-card-title class="scorecardCardTitle">
+      <span class="courseTitle">
+        {{courseInfo.name}} Golf Course
+      </span>
+      <div class="buttonContainer">
+        <button class="titleButton" mat-raised-button color="primary" (click)="toggleScorecard()">{{showCard ? 'Hide' : 'Show'}} Scorecard</button>
+        <button class="titleButton" mat-raised-button color="primary" (click)="toggleHoleInfo()">{{showInfoCard ? 'Hide' : 'Show'}} Hole Info</button>
+      </div>
+    </mat-card-title>
+
+    <mat-card-content class="tableContainer" *ngIf="showCard">
+      <mat-card-title>Scorecard</mat-card-title>
+      <table mat-table [dataSource]="courseInfo.playerArray" class="mat-elevation-z8">
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let player"> {{player.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="outScore">
+          <th mat-header-cell *matHeaderCellDef> Out </th>
+          <td mat-cell *matCellDef="let player"> {{player.outScore}} </td>
+        </ng-container>
+        <ng-container matColumnDef="inScore">
+          <th mat-header-cell *matHeaderCellDef> In </th>
+          <td mat-cell *matCellDef="let player"> {{player.inScore}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ParScore">
+          <th mat-header-cell *matHeaderCellDef> Par </th>
+          <td mat-cell *matCellDef="let player"> {{player.parScore}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsTwo"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsTwo;"></tr>
+      </table>
+    </mat-card-content>
+
+    <mat-card-content class="tableContainer" *ngIf="showInfoCard">
+      <mat-card-title>Hole Information</mat-card-title>
+      <table mat-table [dataSource]="courseInfo.holeArray" class="mat-elevation-z8">
+        <ng-container matColumnDef="Hole">
+          <th mat-header-cell *matHeaderCellDef> Hole </th>
+          <td mat-cell *matCellDef="let hole"> {{hole.hole}} </td>
+          <td mat-footer-cell *matFooterCellDef> Totals </td>
+        </ng-container>
+        <ng-container matColumnDef="Yards">
+          <th mat-header-cell *matHeaderCellDef> Yards </th>
+          <td mat-cell *matCellDef="let hole"> {{hole.yards}} </td>
+          <td mat-footer-cell *matFooterCellDef>{{yardTotal}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Par">
+          <th mat-header-cell *matHeaderCellDef> Par </th>
+          <td mat-cell *matCellDef="let hole"> {{hole.par}} </td>
+          <td mat-footer-cell *matFooterCellDef>{{parTotal}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hcp">
+          <th mat-header-cell *matHeaderCellDef> Hcp </th>
+          <td mat-cell *matCellDef="let hole"> {{hole.hcp}} </td>
+          <td mat-footer-cell *matFooterCellDef> -- </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+      </table>
+    </mat-card-content>
+    <mat-card-content>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+    <mat-card-content class="navigationButtonContainer">
+      <i *ngIf="courseInfo.holeIndex != 0" class="material-icons arrow" (click)="backHole()">
+        arrow_back_ios
+      </i>
+      <img class="golfBall" src="../../assets/images/golf-icon.ico">
+      <i *ngIf="courseInfo.holeIndex != 17 && scoring.haveScore[courseInfo.holeIndex]" class="material-icons arrow" (click)="forwardHole()">
+        arrow_forward_ios
+      </i>
+    </mat-card-content>
+    <mat-card-content class="endGameButton">
+      <div *ngIf="scoring.haveScore.length == 18">
+        <button mat-raised-button color="primary" (click)="gameCompletePage()">Finish Game</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

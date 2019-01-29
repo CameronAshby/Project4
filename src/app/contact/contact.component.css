@@ -1,0 +1,17 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-card {
+  margin-top: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 80%;
+}

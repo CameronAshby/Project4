@@ -1,0 +1,14 @@
+.angularLogo {
+  width: 80px;
+  height: 70px;
+}
+
+.titleLogo {
+  cursor: pointer;
+}
+
+.header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
